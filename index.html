@@ -11,6 +11,8 @@
     <!-- Link CSS -->
     <link rel="stylesheet" href="style.css">
 
+   
+
     <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const formData = new FormData(form);
 
-        fetch("https://formsubmit.co/boddepalliramakrishna632@gmail.com", {
+        fetch("https://formsubmit.co/3245f0331f7764f82e1fa734ce7c1914", {
             method: "POST",
             body: formData,
             headers: {
@@ -32,22 +34,20 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 alert("✅ Your enquiry has been submitted successfully!");
                 form.reset();
-                // keep +91 after reset
                 form.querySelector('input[name="phone"]').value = "+91";
             } else {
                 alert("❌ Submission failed. Please try again.");
             }
         })
         .catch(error => {
-            console.error(error);
             alert("❌ Network error. Please try later.");
+            console.error(error);
         });
     });
 
 });
 </script>
 
-    
 </head>
 <body>
 
