@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions</title>
+        <!-- Font Awesome for WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+    <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="Eligibility.html">Eigibility</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="admissions.html">Admissions</a>
+</nav>
+</head>
+<body>
+    
+<!-- ADMISSION FORM -->
+<section id="admission" class="admission">
+    <h2>Admission Enquiry</h2>
+    <form action="https://formsubmit.co/swapnasobar@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Student Name" required>
+        <input
+    type="tel"
+    name="phone"
+    value="+91"
+    pattern="\+91[6-9][0-9]{9}"
+    placeholder="+91XXXXXXXXXX"
+    inputmode="numeric"
+    title="Enter valid 10-digit Indian mobile number starting with +91"
+    required>
+
+        <select name="course" required>
+            <option value="">Select Course</option>
+            <option>ANM</option>
+            <option>GNM</option>
+            <option>B.Sc Nursing</option>
+            <option>PB B.Sc Nursing</option>
+            <option>B.Sc MLT</option>
+            <option>Diploma Paramedical</option>
+            <option>Vocational Paramedical</option>
+            <option>BPT</option>
+        </select>
+        <input type="hidden" name="_subject" value="New Nursing Admission Enquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit" class="bounce">Submit Enquiry</button>
+    </form>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <p>📞Call / WhatsApp: 9177814551 | 🎓 Nursing | Paramedical | Physiotherapy Admissions Open
+BSc Nursing | GNM | ANM | BPT | MLT
+ | Govt Approved | Placement Assistance</p>
+</footer>
+
+<!-- WHATSAPP ICON -->
+<a href="https://wa.me/919666214083?text=I%20want%20nursing%20admission%20details" 
+   class="whatsapp" target="_blank">
+   <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- CALL ICON -->
+<a href="tel:9666214083" class="call-icon">
+    <i class="fa-solid fa-phone"></i>
+</a>
+
+
+</body>
+</html>
