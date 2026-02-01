@@ -1,125 +1,161 @@
-/* ===== RESET ===== */
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; /* iOS tap fix */
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    color: #333;
+    background: #E7F1FF;
+    color: #1F2933;
 }
 
-/* ===== NAVBAR ===== */
-
-
-.logo {
-    height: 55px;
-    width: auto;
-    margin-right: 15px;
-
-    flex-shrink: 0;        /* ⭐ prevents pushing menu */
-    transform-origin: center left;
-    transition: transform 0.3s ease;
-}
-
-
-/* zoom on hover / touch */
-.logo:hover,
-.logo:active {
-    transform: scale(1.15);
-}
-
-
+/* ================= NAVBAR ================= */
 .nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     background: linear-gradient(90deg, #0D6EFD, #17A2B8);
-    padding: 12px 20px;
+    padding: 10px 16px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
 }
 
+/* LOGO */
+.logo {
+    height: 52px;
+    margin-right: 12px;
 
+    flex-shrink: 0;               /* prevents menu push */
+    transform-origin: center left;
+    transition: transform 0.25s ease;
+    touch-action: manipulation;   /* mobile safe */
+}
 
+.logo:hover,
+.logo:active {
+    transform: scale(1.12);
+}
+
+/* NAV LINKS */
 .nav a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
+    margin: 6px 10px;
+    white-space: nowrap;
 }
 
 .nav a:hover {
     text-decoration: underline;
 }
 
-/* ===== HERO SECTION ===== */
+/* ================= HERO ================= */
 .hero {
-    background-image: url("images/hero.jpg");
     height: 90vh;
-    background-size: cover;
-    background-position: center;
+    background: url("images/hero.jpg") center / cover no-repeat;
     position: relative;
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.6);
     height: 100%;
-    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
-    padding: 150px 20px 0;
+    padding: 20px;
 }
 
 .overlay h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+    font-size: 40px;
+    color: #ffffff;
 }
 
 .overlay p {
-    font-size: 20px;
+    font-size: 18px;
+    color: #F1F8FF;
+    margin-top: 8px;
 }
 
-/* ===== BUTTON ===== */
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 35px;
-    background-color: #28a745;
-    color: #fff;
-    text-decoration: none;
+/* ================= BUTTON ================= */
+.btn,
+button {
+    margin-top: 22px;
+    padding: 12px 32px;
+    background: #28A745;
+    color: #ffffff;
+    border: none;
     border-radius: 30px;
     font-size: 16px;
+    cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #218838;
-}
-
-/* ===== SECTIONS ===== */
+/* ================= SECTIONS ================= */
 section {
     padding: 50px 20px;
     text-align: center;
+    background: #ffffff;
 }
 
 section h2 {
-    margin-bottom: 15px;
     color: #007bff;
+    margin-bottom: 14px;
 }
 
-/* ===== COURSE LIST ===== */
-.courses-preview ul {
-    list-style: none;
+/* ================= CARDS ================= */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
 }
 
-.courses-preview li {
-    font-size: 18px;
-    padding: 8px 0;
+.card {
+    width: 260px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* ===== FORM ===== */
+.card h3 {
+    color: #0D6EFD;
+}
+
+.card.highlight {
+    border-top: 4px solid #28A745;
+}
+
+/* ================= GALLERY ================= */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ================= FORM ================= */
 form {
     max-width: 500px;
     margin: auto;
@@ -130,265 +166,79 @@ form select {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ccc;
     border-radius: 6px;
+    border: 1px solid #CED4DA;
 }
 
-form button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #0D6EFD;
 }
 
-form button:hover {
-    background-color: #0056b3;
-}
-
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 footer {
-    background-color: #222;
-    color: #fff;
+    background: #0A2540;
+    color: #ffffff;
     padding: 15px;
     text-align: center;
 }
 
-/* ===== WHATSAPP ICON ===== */
-.whatsapp {
+/* ================= FLOATING ICONS ================= */
+.whatsapp,
+.call-icon {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    font-size: 32px; /* Font Awesome icon size */
-    padding: 15px 17px;
+    bottom: 18px;
+    font-size: 28px;
+    padding: 15px;
     border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    color: #ffffff;
     z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.whatsapp:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
+.whatsapp {
+    right: 18px;
+    background: #25D366;
 }
 
-/* ===== CENTER TEXT ===== */
-.center {
-    text-align: center;
-    margin: 30px 0;
+.call-icon {
+    right: 88px;
+    background: #0D6EFD;
 }
 
-/* ===== COURSE CARDS ===== */
-.cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
-
-.card {
-    width: 260px;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-    color: #28a745;
-    margin-bottom: 10px;
-}
-
-/* ===== GALLERY ===== */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
+/* ================= MOBILE (ANDROID + iOS) ================= */
 @media (max-width: 768px) {
-    .overlay {
-        padding-top: 100px;
-    }
-
-    .overlay h1 {
-        font-size: 28px;
-    }
-
-    .overlay p {
-        font-size: 16px;
-    }
 
     .logo {
         height: 40px;
-    
-         touch-action: manipulation;
+        margin-bottom: 6px;
+    }
+
+    .nav {
+        padding: 8px 10px;
     }
 
     .nav a {
-        display: inline-block;
-        margin: 8px;
         font-size: 14px;
+        margin: 6px;
     }
 
-    form input,
-    form select,
-    form button {
-        width: 95%;
+    .overlay h1 {
+        font-size: 26px;
+    }
+
+    .overlay p {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .call-icon {
+        right: 80px;
     }
 }
-
-
-
-
-
-/* @@@@@@@@@@@@@@@@@@@ */
-/* ===== CALL ICON ONLY ===== */
-.call-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 100px;
-    background-color: #3b82cd;
-    color: white;
-    font-size: 28px;
-    padding: 16px;
-    border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.call-icon:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
-}
-
-
-
-
-/* ################################# */
-:root {
-    --primary: #0D6EFD;        /* Medical Blue */
-    --secondary: #17A2B8;      /* Teal */
-    --light: #E7F1FF;          /* Soft Light Blue */
-    --white: #ffffff;
-    --dark: #1F2933;
-    --success: #28A745;        /* Green CTA */
-    --whatsapp: #25D366;
-    --danger: #DC3545;
-}
-
-
-body {
-    background: var(--light);
-    color: var(--dark);
-}
-
-.nav {
-    background: linear-gradient(90deg, #0D6EFD, #17A2B8);
-}
-
-.nav a {
-    color: var(--white);
-}
-
-.nav a:hover {
-    color: #E2F0FF;
-}
-
-
-
-.hero h1 {
-    color: var(--white);
-}
-
-.hero p {
-    color: #F1F8FF;
-}
-
-
-.btn,
-button {
-    background: var(--success);
-    color: var(--white);
-}
-
-.btn:hover,
-button:hover {
-    background: #218838;
-}
-
-.about,
-.courses-preview,
-.gallery-section,
-.admission {
-    background: var(--white);
-}
-
-.card {
-    background: var(--white);
-    border-top: 4px solid var(--primary);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.card h3 {
-    color: var(--primary);
-}
-
-.card.highlight {
-    border-top: 4px solid var(--success);
-    background: #F0FFF4;
-}
-
-input,
-select {
-    border: 1px solid #CED4DA;
-}
-
-input:focus,
-select:focus {
-    border-color: var(--primary);
-}
-
-footer {
-    background: #0A2540;
-    color: var(--white);
-}
-
-.whatsapp {
-    background: var(--whatsapp);
-    color: var(--white);
-}
-
-.call-icon {
-    background: var(--primary);
-    color: var(--white);
-}
-
-
-
-
-
-
-
-
