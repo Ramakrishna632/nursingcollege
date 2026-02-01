@@ -238,7 +238,8 @@ footer {
 
     .logo {
         height: 40px;
-        
+    
+         touch-action: manipulation;
     }
 
     .nav a {
@@ -383,6 +384,7 @@ footer {
     background: var(--primary);
     color: var(--white);
 }
+
 
 
 
