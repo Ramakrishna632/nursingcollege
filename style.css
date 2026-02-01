@@ -18,8 +18,12 @@ body {
     height: 55px;
     width: auto;
     margin-right: 15px;
+
+    flex-shrink: 0;        /* ⭐ prevents pushing menu */
+    transform-origin: center left;
     transition: transform 0.3s ease;
 }
+
 
 /* zoom on hover / touch */
 .logo:hover,
@@ -234,8 +238,7 @@ footer {
 
         logo {
         height: 40px;
-        top: 10px;
-        left: 15px;
+        
     }
 
     .nav a {
@@ -380,6 +383,7 @@ footer {
     background: var(--primary);
     color: var(--white);
 }
+
 
 
 
